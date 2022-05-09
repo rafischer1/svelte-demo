@@ -19,5 +19,7 @@ node scripts/setupTypeScript.js
 ## Docs
 
 [Svelte Official Docs](https://svelte.dev/docs#template-syntax-each)
+
 [Sapper Routing Setup](https://sapper.svelte.dev/docs#Routing)
+
 [Page Routing](https://visionmedia.github.io/page.js/)
