@@ -34,7 +34,7 @@
   {/each}
 </ul>
 
-{#if selected !== null}
+{#if selected}
   <button on:click={() => reset()} disabled={selected === null}>Reset</button>
 {/if}
 
