@@ -1,14 +1,17 @@
 <script>
   import { createEventDispatcher } from 'svelte';
   // input list
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher('click', {
+    onanimationend: true,
+    onclick: () => console.log('Howdy there'),
+  });
 
   export let list = [];
 
   let selected = null;
 
   const handleClick = (index, item) => {
-    selected = index;
+    selected = index + 1;
     dispatch('title', {
       title: item.toUpperCase(),
     });
@@ -26,7 +29,7 @@
 <ul>
   {#each list as item, index}
     <li
-      class:active={selected === index}
+      class:active={selected === index + 1}
       on:click={() => handleClick(index, item)}
     >
       {index + 1}: {item}
@@ -34,7 +37,7 @@
   {/each}
 </ul>
 
-{#if selected !== null}
+{#if selected}
   <button on:click={() => reset()} disabled={selected === null}>Reset</button>
 {/if}
 
