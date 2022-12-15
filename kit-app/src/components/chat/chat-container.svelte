@@ -1,0 +1,43 @@
+<script>
+  let chatText = ["hey wussup", "nada mucho muchacho"]
+</script>
+
+<div class="chat-container">
+ <div class="chat-box">
+    <h3>Chat 1 Header</h3>
+    <div class="chat-body">
+        {#each chatText as entry, index}
+            <div>{index}: {entry}</div>
+        {/each}
+    </div>
+    <div class="chat-input">
+        <div>🐼</div>
+        <input />
+        <button>Do it</button>
+    </div>
+    <h4>Chat Footer</h4>
+ </div>
+</div>
+
+<style>
+    .chat-box {
+        border: 5px double black;
+        width: 50%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .chat-body {
+        background: rgba(240, 239, 239, 0.9);
+        border: 1px solid rgba(240, 239, 239, 0.7);
+        margin: 3px 10px 3px 15px;
+        border-radius: 5px;
+        padding: 5%;
+    }
+
+    .chat-input {
+        display: flex;
+        margin: auto;
+    }
+</style>
