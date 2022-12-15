@@ -6,7 +6,7 @@
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Svelte demo app totally!" />
 </svelte:head>
 
 <section>
@@ -39,6 +39,8 @@
 
 	h1 {
 		width: 100%;
+		background: #76dc76;
+		padding: 20%;
 	}
 
 	.welcome {
