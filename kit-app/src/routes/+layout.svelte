@@ -7,11 +7,11 @@
 	<Header />
 
 	<main>
-		<slot />
+     <h1>Main Body Here</h1>
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>This is the footer</p>
 	</footer>
 </div>
 
