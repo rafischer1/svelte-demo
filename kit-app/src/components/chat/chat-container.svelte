@@ -1,13 +1,19 @@
 <script>
-  let chatText = ["hey wussup", "nada mucho muchacho"]
+  import {chat} from "../../stores";
+
+  let chats = [];
+
+  chat.subscribe(value => {
+      chats = value;
+  });
 </script>
 
 <div class="chat-container">
  <div class="chat-box">
     <h3>Chat 1 Header</h3>
     <div class="chat-body">
-        {#each chatText as entry, index}
-            <div>{index}: {entry}</div>
+        {#each chats as entry, index}
+            <div>{index}: {entry.text}</div>
         {/each}
     </div>
     <div class="chat-input">
