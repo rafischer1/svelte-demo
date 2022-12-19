@@ -1,5 +1,6 @@
 <script>
   import {chat} from "../../stores";
+  import ChatForm from "./chat-form.svelte"
 
   let chats = [];
 
@@ -16,11 +17,7 @@
             <div>{index}: {entry.text}</div>
         {/each}
     </div>
-    <div class="chat-input">
-        <div>🐼</div>
-        <input />
-        <button>Do it</button>
-    </div>
+    <ChatForm />
     <h4>Chat Footer</h4>
  </div>
 </div>
@@ -42,8 +39,4 @@
         padding: 5%;
     }
 
-    .chat-input {
-        display: flex;
-        margin: auto;
-    }
 </style>
