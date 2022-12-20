@@ -1,6 +1,7 @@
 <script>
   import {chat} from "../../stores";
   import ChatForm from "./chat-form.svelte"
+  import DeleteButton from "./delete-button.svelte"
 
   let chats = [];
 
@@ -14,7 +15,7 @@
     <h3>Chat 1 Header</h3>
     <div class="chat-body">
         {#each chats as entry, index}
-            <div>{index}: {entry.text}</div>
+            <div class="chat-line">{entry.id}: {entry.text} <DeleteButton chat_id={entry.id}/></div>
         {/each}
     </div>
     <ChatForm />
@@ -29,6 +30,11 @@
         text-align: center;
         display: flex;
         flex-direction: column;
+    }
+
+    .chat-line {
+        text-align: center;
+        display: flex;
     }
 
     .chat-body {

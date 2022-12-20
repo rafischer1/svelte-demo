@@ -1,7 +1,11 @@
 <script>
+    import {chat} from "../../stores";
     let response = ""
     const handleClick = () => {
-        alert(response)
+        chat.update((_old) => {
+            const index = _old.length
+            return [..._old, {user_id: 1, id: index + 1, text:response}]
+        })
         setTimeout(() => {
             response = ""
         }, 500)
