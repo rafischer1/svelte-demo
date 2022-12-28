@@ -11,16 +11,16 @@
 </script>
 
 <div class="chat-container">
+    {#each chats as entry, index}
  <div class="chat-box">
-    <h3>Chat 1 Header</h3>
+    <h3>{entry.username}</h3>
     <div class="chat-body">
-        {#each chats as entry, index}
-            <div class="chat-line">{entry.id}: {entry.text} <DeleteButton chat_id={entry.id}/></div>
-        {/each}
+        <div class="chat-line">{entry.id}: {entry.text} <DeleteButton chat_id={entry.id}/></div>
     </div>
-    <ChatForm />
-    <h4>Chat Footer</h4>
+    <ChatForm chat_id="{entry.id}"/>
+    <h4>Chat Footer: {entry.id}</h4>
  </div>
+    {/each}
 </div>
 
 <style>
