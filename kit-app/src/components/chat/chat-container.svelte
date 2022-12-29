@@ -1,42 +1,43 @@
 <script>
-  import {chat} from "../../stores";
+  import {games} from "../../stores";
   import ChatForm from "./chat-form.svelte"
   import DeleteButton from "./delete-button.svelte"
+  import TimeDisplay from "../time-display.svelte"
 
-  let chats = [];
+  let liveGames = [];
 
-  chat.subscribe(value => {
-      chats = value;
+  games.subscribe(value => {
+      liveGames = value;
   });
 </script>
 
 <div class="chat-container">
-    {#each chats as entry, index}
+    {#each liveGames as game, index}
  <div class="chat-box">
-    <h3>{entry.username}</h3>
+    <h2>{game.teamHome} v {game.teamAway}</h2>
     <div class="chat-body">
-        <div class="chat-line">{entry.id}: {entry.text} <DeleteButton chat_id={entry.id}/></div>
+<!--        <div class="chat-line">{game.id} <DeleteButton chat_id={game.id}/></div>-->
+        <h2>{game.scoreHome} - {game.scoreAway}</h2>
+        <TimeDisplay time="{game.minute}" live="{game.live}" />
     </div>
-    <ChatForm chat_id="{entry.id}"/>
-    <h4>Chat Footer: {entry.id}</h4>
+<!--    <ChatForm chat_id="{game.id}"/>-->
+    <h4>Chat Footer: {game.id}</h4>
  </div>
     {/each}
 </div>
 
 <style>
+    .chat-container {
+        background-color: #dac671;
+        width: 75%;
+        margin: auto;
+    }
     .chat-box {
         border: 5px double black;
-        width: 50%;
         text-align: center;
         display: flex;
         flex-direction: column;
     }
-
-    .chat-line {
-        text-align: center;
-        display: flex;
-    }
-
     .chat-body {
         background: rgba(240, 239, 239, 0.9);
         border: 1px solid rgba(240, 239, 239, 0.7);

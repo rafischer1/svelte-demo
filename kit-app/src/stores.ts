@@ -1,4 +1,8 @@
 import { writable } from 'svelte/store';
 
-export const chat = writable([{user_id: 1, id: 1, text:"chat 1", username: "Chat Two Name"},
-    {user_id: 1, id: 2, text:"chat two", username: "Chat Two Name"}]);
+export const games = writable([{id: 1, teamHome: "Real Madrid",
+    teamAway: "Real Betis", minute: 0, scoreHome: 0, scoreAway: 0, live: false},
+    {id: 2, teamHome: "Barcelona", teamAway: "Español",
+        minute: 0, scoreHome: 0, scoreAway: 0, live: true},
+    {id: 3, teamHome: "Celta Vigo", teamAway: "Real Sociedad",
+        minute: 23, scoreHome: 2, scoreAway: 1, live: false}]);
